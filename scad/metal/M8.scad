@@ -67,7 +67,7 @@ module m8NutWasher(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module m8SmoothRod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
-        yCyl(4,length);
+        yCyl(4, length, clr="black");
     }//transform
 }//module
 

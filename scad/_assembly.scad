@@ -1,6 +1,3 @@
-include <../lib/lib.scad>
-include <metal/M8.scad>
-include <org/mendelOrg.scad>
+include <assemblyFrame.scad>
 
-mendelOrg();
-m8();
+assemblyFrame();

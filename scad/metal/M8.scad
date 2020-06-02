@@ -1,11 +1,16 @@
 include <../../lib/lib.scad>
 
-m8Rod();
-m8SmoothRod(300,50);
-m8Nut(100);
-m8LockWasher(150);
-m8Washer(200);
-m8NutWasher(250);
+module m8(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        m8Rod();
+        m8SmoothRod(300,50);
+        m8Nut(100);
+        m8LockWasher(150);
+        m8Washer(200);
+        m8NutWasher(250);
+    }//transform
+}//module
 
 module m8Rod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])

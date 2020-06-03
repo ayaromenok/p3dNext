@@ -24,7 +24,7 @@ module moBarClamp8off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 
 module moFrameVertexFootL2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
-    rotate([rx,ry,rz]){
+    rotate([rx,ry,rz]){        
         import("../stl/mendel/frame-vertex-foot-l-2off.stl");
     }//translate
 }//module
@@ -32,6 +32,8 @@ module moFrameVertexFootL2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module moFrameVertex2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
+        translate([-30,-17,0])
+        rotate([0,00,-30])
         import("../stl/mendel/frame-vertex-2off.stl");
     }//translate
 }//module

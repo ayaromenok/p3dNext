@@ -7,7 +7,8 @@ module assemblyFrame(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
         assemblyFrameBasement();
-        assemblyFrameTriangle();
+        assemblyFrameSide();
+        assemblyFrameTop();
         //mendelOrg();
         //m8();
     }//translate
@@ -39,7 +40,7 @@ module assemblyFrameBasement(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 }//module  assemblyFrameBasement   
 
 //basement
-module assemblyFrameTriangle(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+module assemblyFrameSide(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
         moFrameVertex2off(px=155, pz=350, rx=90, ry=90, rz=90);        
@@ -51,3 +52,13 @@ module assemblyFrameTriangle(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         m8Rod(370, px=-160, py=-100, pz=190, rx=-30);
     }//translate
 }//module  assemblyFrameTriangle
+
+module assemblyFrameTop(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        m8Rod(470, py=29.5, pz=340.5,ry=90);
+        m8Rod(470, py=-29, pz=340.5,ry=90);
+        moZMotorMount2off(px=195, pz=340.5);
+        moZMotorMount2off(px=-195, pz=340.5, rz=180);
+    }//translate
+}//module  assemblyFrameTop

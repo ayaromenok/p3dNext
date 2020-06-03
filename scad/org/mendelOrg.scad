@@ -67,3 +67,9 @@ module moXEndMotor1off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     }//translate
 }//module
         
+module moZMotorMount2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        import("../stl/mendel/z-motor-mount-2off.stl");
+    }//translate
+}//module

@@ -38,9 +38,17 @@ module assemblyFrameBasement(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         m8Rod(470, pz=-8, rx=90, rz=45);
         
         //Z-asix
-         moBarClamp8off(px=-152, py=-7, pz=4, ry=-90);
-         moBarClamp8off(px=167, py=-7, pz=4, ry=-90);
-         m8Rod(470, pz=12, rx=90, rz=90);
+        translate([0,10,0]){
+            moBarClamp8off(px=-169, py=-7, pz=37.7, ry=90);
+            moBarClamp8off(px=152, py=-7, pz=37.7, ry=90);
+            m8Rod(470, pz=31, rx=90, rz=90);
+         
+            moBarClamp8off(px=-210, py=-17, pz=23, rz=90);
+            moBarClamp8off(px=224, py=-17, pz=23, rz=90);
+            
+            m8SmoothRod(px=217, py=-10, pz=185);
+            m8SmoothRod(px=-217, py=-10, pz=185);
+        }
     }//translate
 }//module  assemblyFrameBasement   
 

@@ -36,6 +36,11 @@ module assemblyFrameBasement(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         
         //diagonal
         m8Rod(470, pz=-8, rx=90, rz=45);
+        
+        //Z-asix
+         moBarClamp8off(px=-152, py=-7, pz=4, ry=-90);
+         moBarClamp8off(px=167, py=-7, pz=4, ry=-90);
+         m8Rod(470, pz=12, rx=90, rz=90);
     }//translate
 }//module  assemblyFrameBasement   
 

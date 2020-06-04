@@ -7,6 +7,7 @@ module assemblyFrame(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
         assemblyFrameBasement();
+        assemblyFrameBasementNuts();
         assemblyFrameSide();
         assemblyFrameTop();
         //mendelOrg();
@@ -29,7 +30,7 @@ module assemblyFrameBasement(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         m8Rod(330, py=189, pz=60, ry=90);
         m8Rod(330, py=-159.7, pz=9.3, ry=90);
         m8Rod(330, py=-189, pz=60, ry=90);
-
+        
         //local axis Y
         m8Rod(370, px=154, pz=21, rx=90);
         m8Rod(370, px=-154, pz=21, rx=90);
@@ -75,3 +76,57 @@ module assemblyFrameTop(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         moZMotorMount2off(px=-195, pz=340.5, rz=180);
     }//translate
 }//module  assemblyFrameTop
+
+module assemblyFrameBasementNuts(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        //nuts - local axis X
+        m8NutWasher(px=160, py=159.7, pz=9.3,ry=90);
+        m8NutWasher(px=160, py=189, pz=60,ry=90);
+        m8NutWasher(px=160, py=-159.7, pz=9.3,ry=90);
+        m8NutWasher(px=160, py=-189, pz=60,ry=90);
+        
+        m8NutWasher(px=147.5, py=159.7, pz=9.3,ry=-90);
+        m8NutWasher(px=147.5, py=189, pz=60,ry=-90);
+        m8NutWasher(px=147.5, py=-159.7, pz=9.3,ry=-90);
+        m8NutWasher(px=147.5, py=-189, pz=60,ry=-90);
+        
+        m8NutWasher(px=-160, py=159.7, pz=9.3,ry=-90);
+        m8NutWasher(px=-160, py=189, pz=60,ry=-90);
+        m8NutWasher(px=-160, py=-159.7, pz=9.3,ry=-90);
+        m8NutWasher(px=-160, py=-189, pz=60,ry=-90);
+        
+        m8NutWasher(px=-147.5, py=159.7, pz=9.3,ry=90);
+        m8NutWasher(px=-147.5, py=189, pz=60,ry=90);
+        m8NutWasher(px=-147.5, py=-159.7, pz=9.3,ry=90);
+        m8NutWasher(px=-147.5, py=-189, pz=60,ry=90);
+        
+        //nuts local axix Y
+        m8NutWasher(px=154, py=175, pz=21,rx=-90);
+        m8NutWasher(px=154, py=145, pz=21,rx=90);        
+        m8NutWasher(px=154, py=-175, pz=21,rx=90);
+        m8NutWasher(px=154, py=-145, pz=21,rx=-90);
+        
+        m8NutWasher(px=-154, py=175, pz=21,rx=-90);
+        m8NutWasher(px=-154, py=145, pz=21,rx=90);        
+        m8NutWasher(px=-154, py=-175, pz=21,rx=90);
+        m8NutWasher(px=-154, py=-145, pz=21,rx=-90);
+        
+        m8NutWasher(px=154, py=17.5, pz=21,rx=-90);
+        m8NutWasher(px=154, py=2, pz=21,rx=90);        
+        
+        m8NutWasher(px=-154, py=17.5, pz=21,rx=-90);
+        m8NutWasher(px=-154, py=2, pz=21,rx=90);        
+        
+        //support Z 
+        m8NutWasher(px=162, py=9, pz=31.5,ry=90);
+        m8NutWasher(px=146, py=9, pz=31.5,ry=-90);        
+        m8NutWasher(px=232, py=9, pz=31.5,ry=90);
+        m8NutWasher(px=217.5, py=9, pz=31.5,ry=-90);
+        
+        m8NutWasher(px=-162, py=9, pz=31.5,ry=-90);
+        m8NutWasher(px=-146, py=9, pz=31.5,ry=90);        
+        m8NutWasher(px=-232, py=9, pz=31.5,ry=-90);
+        m8NutWasher(px=-217.5, py=9, pz=31.5,ry=90);        
+    }//translate
+}//module  assemblyFrameBasementNuts        

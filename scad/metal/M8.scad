@@ -54,10 +54,13 @@ module m8NutWasher(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     rotate([rx,ry,rz]){
         difference(){
             union(){
+                color("lightgreen")
                 translate([0,0,2.5])
                     cylinder(6.5, 7.2, 7.2, $fn=6);
+                color("lightgreen")
                 translate([0,0,1])
                     cylinder(1.5, 6, 6, $fn=8);
+                color("lightgreen")
                 cylinder(1, 9, 9, $fn=16);
             }
             cylinder(10, 4, 4);

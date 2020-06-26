@@ -24,6 +24,7 @@ module m8Rod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 
 module m8Nut(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
+    color("lightgreen")
     rotate([rx,ry,rz]){
         difference(){
             cylinder(6.5, 7.2, 7.2, $fn=6);
@@ -35,6 +36,7 @@ module m8Nut(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module m8LockWasher(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
+        color("lightgreen")
         difference(){
             cylinder(1.5, 6, 6, $fn=8);
             cylinder(8, 4, 4);
@@ -45,6 +47,7 @@ module m8LockWasher(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module m8Washer(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
+        color("lightgreen")
         difference(){
             cylinder(1, 9, 9, $fn=16);
             cylinder(8, 4, 4);

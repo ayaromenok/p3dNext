@@ -11,6 +11,11 @@ module mendelOrg(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         moXCarriage1off(100,100);
         moXEndMotor1off(200,100);
         
+        //axis X - prusaMndel
+        moXEndIdler(0,100);
+        moXCarriage(100,100);
+        moXEndMotor(200,100);
+        
     }//translate
 }//module
 
@@ -71,5 +76,28 @@ module moZMotorMount2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
         import("../stl/mendel/z-motor-mount-2off.stl");
+    }//translate
+}//module
+
+////PrusaMendel version
+//axis X
+module moXEndIdler(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        import("../stl/mendel/x-end-idler.stl");
+    }//translate
+}//module
+
+module moXCarriage(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        import("../stl/mendel/x-carriage.stl");
+    }//translate
+}//module
+
+module moXEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        import("../stl/mendel/x-end-motor.stl");
     }//translate
 }//module

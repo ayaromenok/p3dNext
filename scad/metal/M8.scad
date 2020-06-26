@@ -1,5 +1,7 @@
 include <../../lib/lib.scad>
 
+//m8();
+
 module m8(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
@@ -9,6 +11,7 @@ module m8(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         m8LockWasher(150);
         m8Washer(200);
         m8NutWasher(250);
+        m8BallBearing(300);
     }//transform
 }//module
 
@@ -71,6 +74,15 @@ module m8SmoothRod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
         yCyl(4, length, clr="black");
+    }//transform
+}//module
+
+module m8BallBearing(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){        
+        yCyl(r=14, szz=1, pz=4.5,clr="darkgreen");
+        yCyl(r=11, szz=8, clr="darkgreen");
+        yCyl(r=14, szz=1, pz=-4.5,clr="darkgreen");
     }//transform
 }//module
 

@@ -12,9 +12,12 @@ module mendelOrg(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         moXEndMotor1off(200,100);
         
         //axis X - prusaMndel
-        moXEndIdler(0,100);
-        moXCarriage(100,100);
-        moXEndMotor(200,100);
+        moXEndIdler(0,200);
+        moXCarriage(100,200);
+        moXEndMotor(200,200);
+        
+        //asixY
+        moYEndMotor(0,300);
         
     }//translate
 }//module
@@ -84,20 +87,27 @@ module moZMotorMount2off(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module moXEndIdler(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
-        import("../stl/mendel/x-end-idler.stl");
+        import("../stl/prusaMendel/x-end-idler.stl");
     }//translate
 }//module
 
 module moXCarriage(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
-        import("../stl/mendel/x-carriage.stl");
+        import("../stl/prusaMendel/x-carriage.stl");
     }//translate
 }//module
 
 module moXEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){
-        import("../stl/mendel/x-end-motor.stl");
+        import("../stl/prusaMendel/x-end-motor.stl");
+    }//translate
+}//module
+
+module moYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){
+        import("../stl/prusaMendel/ybrac-t.stl");
     }//translate
 }//module

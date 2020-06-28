@@ -1,5 +1,7 @@
 include <metal/M8.scad>
+include <metal/hotbed.scad>
 include <assemblyFrame.scad>
+
 
 assemblyFrame();
 assemblyAxisY();
@@ -9,6 +11,7 @@ module assemblyAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     rotate([rx,ry,rz]){        
         assemblySmoothRodAxisY();
         assemblyDriveAxisY();
+        assemblyHotBed(0,0,80,0,0,-90);
     }//translate
 }//module assemblyAxisY 
 
@@ -54,5 +57,12 @@ module assemblyDriveAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         
         m8NutWasher(px=6, py=160, pz=9, ry=90, rz=180 );
         m8NutWasher(px=16,py=160, pz=9,ry=90 );
+    }//translate
+}//module        
+
+module assemblyHotBed(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz]){        
+        hotBed150x150();
     }//translate
 }//module        

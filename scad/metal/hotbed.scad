@@ -1,6 +1,6 @@
 include <../../lib/lib.scad>
 
-hotBed150x150();
+//hotBed150x150();
 
 module hotBed150x150(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="green"){
     translate([(px), (py), pz])

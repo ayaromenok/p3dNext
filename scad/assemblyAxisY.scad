@@ -1,5 +1,6 @@
 include <metal/M8.scad>
 include <metal/hotbed.scad>
+include <new/hotbedHolder.scad>
 include <assemblyFrame.scad>
 
 
@@ -11,7 +12,7 @@ module assemblyAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     rotate([rx,ry,rz]){        
         assemblySmoothRodAxisY();
         assemblyDriveAxisY();
-        assemblyHotBed(0,0,80,0,0,-90);
+        assemblyHotBed(0,0,90,0,0,-90);        
     }//translate
 }//module assemblyAxisY 
 
@@ -64,5 +65,6 @@ module assemblyHotBed(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){        
         hotBed150x150();
+        hotBedHolder150x150();
     }//translate
 }//module        

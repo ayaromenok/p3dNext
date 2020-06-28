@@ -1,6 +1,9 @@
 include <metal/M8.scad>
 include <metal/hotbed.scad>
+include <metal/parts.scad>
+
 include <new/hotbedHolder.scad>
+
 include <assemblyFrame.scad>
 
 

@@ -31,8 +31,17 @@ module LM8UUHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="lightgreen"){
     color(clr){        
         difference(){
             yCyl(10,23);
-            LM8UU();
-            yCyl(5,25);
+            difference(){
+                yCyl(7.9,24);                
+                difference(){
+                    yCyl(8,0.8,0,0,8.2);
+                    yCyl(7.4,2,0,0,8.2);
+                }//diff
+                difference(){
+                    yCyl(8,0.8,0,0,-8.2);
+                    yCyl(7.4,2,0,0,-8.2);
+                }//diff
+            }            
             yCube(10,3,25,5);
         }//diff
         yCube(3,7,23,-9);

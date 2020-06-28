@@ -67,7 +67,7 @@ module assemblyDriveAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
 module assemblyHotBed(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){        
-        hotBed150x150();
-        hotBedHolder150x150();
+        hotBed150x150(pz=2);
+        hotBedHolder150x150(pz=2, showMetal=true);
     }//translate
 }//module        

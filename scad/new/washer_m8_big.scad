@@ -1,6 +1,6 @@
 include <../../lib/lib.scad>
-washer_m8_big();
-//washer_m8_big(px=30, sideHole=true);
+//washer_m8_big();
+washer_m8_big(px=30, sideHole=true);
 
 module washer_m8_big(px=0, py=0, pz=0, rx=0, ry=0, rz=0, sideHole=false){
     translate([(px), (py), pz])
@@ -8,7 +8,7 @@ module washer_m8_big(px=0, py=0, pz=0, rx=0, ry=0, rz=0, sideHole=false){
         difference(){    
             union(){
                 yCyl(15);
-                yCyl(6,1.4,pz=0.2);
+                yCyl(6,1.8,pz=0.4);
             }//union
             yCyl(4.4,3);
             if(sideHole){

@@ -23,6 +23,7 @@ module LM8UU(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen"){
     }//transform
 }//module
 
+//LM8UUHolder();
 module LM8UUHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="lightgreen"){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])
@@ -42,7 +43,7 @@ module LM8UUHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="lightgreen"){
             }            
             yCube(10,3,25,5);
         }//diff
-        yCube(3,7,23,-9);
+        yCube(3,7,23,-10);
     }//transform
 }//module
 

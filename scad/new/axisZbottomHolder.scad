@@ -1,6 +1,8 @@
 include <../../lib/lib.scad>
 
 //axisZbottomHolder();
+//mirror([1,0,0])
+//axisZbottomHolder(px=50);
 module axisZbottomHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])
@@ -21,7 +23,7 @@ module axisZbottomHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
             yCyl(5,10, 33,0, 5, fn=2);
             yCyl(5,10, -3,0, 5);
             
-            yCyl2(4.4, 70, px=0, py=10,pz=0, ry=90);
+            yCyl2(4.4, 80, px=0, py=10,pz=0, ry=90);
         }//dif               
         //assemblyBottomAxisZHolder(pz=-2, rx=180);
     }//translate

@@ -2,7 +2,7 @@ include <../../lib/lib.scad>
 
 //LM8UU();
 //LM8UUHolder();
-NEMA17();
+//NEMA17();
 
 module LM8UU(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen"){
     translate([(px), (py), pz])

@@ -15,9 +15,10 @@ module m8(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     }//transform
 }//module
 
-module m8Rod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+module m8Rod(length=300,px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="grey"){
     translate([(px), (py), pz])
-    rotate([rx,ry,rz]){
+    rotate([rx,ry,rz])
+    color(clr){
         yCyl(4,length);
     }//transform
 }//module

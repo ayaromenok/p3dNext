@@ -69,3 +69,17 @@ module NEMA17(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen", length=37){
     }//transform
 }//module
 
+module GT2_16(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen", length=37){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])
+    color(clr) {
+        difference(){
+            union(){
+                yCyl(8,7.5);
+                yCyl(6,7,pz=7);
+                yCyl(8,1.5,pz=11.25);
+            }//union
+            yCyl(2.5,50);
+        }//diff
+    }//transform
+}//module

@@ -90,6 +90,22 @@ module m8BallBearing(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     }//transform
 }//module
 
+module m8SpringRodHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])
+    color("darkgreen"){
+        yCyl(13,8, 15,0,10);
+        yCyl(6,4,15,0,16);
+        difference(){
+            yCyl(5,3, 33,0,7.5);
+            yCyl(2.5,10, 33,0,10);
+        } //diff
+        difference(){
+            yCyl(5,3, -3,0,7.5);
+            yCyl(2.5,10, -3,0,10);    
+        }//diff
+    }//translate
+}//module assemblyAxisZ 
 /*
 module mendelOrg(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])

@@ -90,7 +90,7 @@ module m8BallBearing(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     }//transform
 }//module
 
-module m8SpringRodHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+module m8ShaftHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])
     color("darkgreen"){
@@ -105,7 +105,25 @@ module m8SpringRodHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
             yCyl(2.5,10, -3,0,10);    
         }//diff
     }//translate
-}//module assemblyAxisZ 
+}//module m8ShaftHolder
+//m8ShaftNut();
+module m8ShaftNut(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])
+    color("darkgreen"){
+        difference(){
+            union(){
+                yCyl(5,14);
+                yCyl(10.5,3, pz=5);
+            }//uni
+            yCyl(4,16);
+            yCyl(2,5, px=7.5, pz=5);
+            yCyl(2,5, px=-7.5, pz=5);
+            yCyl(2,5, py=7.5, pz=5);
+            yCyl(2,5, py=-7.5, pz=5);
+        }//dif
+    }//translate
+}//modulem8ShaftNut 
 /*
 module mendelOrg(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])

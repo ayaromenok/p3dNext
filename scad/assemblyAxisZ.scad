@@ -13,11 +13,11 @@ module assemblyAxisZ(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
         assemblyDriveAxisZ();
         
         axisZbottomHolder(-210,0,31);
-        m8SpringRodHolder(-180,0,29,ry=180);
+        m8ShaftHolder(-180,0,29,ry=180);
         
         mirror([1,0,0])
         axisZbottomHolder(-210,0,31);
-        m8SpringRodHolder(210,0,29,ry=180);
+        m8ShaftHolder(210,0,29,ry=180);
     }//translate
 }//module assemblyAxisZ 
 

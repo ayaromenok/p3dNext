@@ -4,7 +4,7 @@ include <../metal/parts.scad>
 // !todo add nut connection!
 //axisYEndMotor(showMetal=true);
 //axisYEndMotor();
-axisYEndMotor(ry=90);
+//axisYEndMotor(ry=90);
 
 module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])

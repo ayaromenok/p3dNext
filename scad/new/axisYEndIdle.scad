@@ -13,8 +13,8 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     {        
         difference(){
             yCube(60,28,56, px=25, py=0);
-            yCube(40,11,8, 40, 7.5, 7);
-            yCube(40,11,8, 40, 7.5, -7);
+            yCube(40,11,22, 40, 7, 0);
+            //yCube(40,11,8, 40, 7.5, -7);
             //m8 shaft
             yCyl(4.6,66, px=14);
             //m8 shaft nut
@@ -23,17 +23,17 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             yCyl(1.2,10, px=14-7.5, pz=-23.5);
             yCyl(1.2,10, px=14, py=7.5, pz=-23.5);
             yCyl(1.2,10, px=14, py=-7.5, pz=-23.5);
-            //nema17 holes
+            //roller holes
             yCyl(12, 32, px=30,py=34,pz=16, rx=90);            
             yCyl(2.3, 32, px=30,py=20,pz=16, rx=90);
             yCyl(12, 32, px=30,py=-2,pz=16, rx=90);
             
             //m8 smooth rod
-            yCyl2(4.2,30,px=20, py=8,pz=41, ry=90);
-            yCyl2(4.3,30,px=-20, py=8,pz=41, ry=90);    
+            yCyl2(4.2,50,px=20, py=8,pz=41, ry=90);
+            yCyl2(4.3,50,px=-20, py=8,pz=41, ry=90);    
         } 
         difference(){
-            yCube(30,1,7, px=27, py=13.5);
+            yCube(30,1.5,7, px=27, py=13.25);
             yCyl(2.3, 32, px=30,py=20,pz=16, rx=90);
         }//dif
         LM8UUHolder(px=-16,py=0, pz=-16.5, rz=180);

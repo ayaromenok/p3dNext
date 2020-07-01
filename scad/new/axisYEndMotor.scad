@@ -12,7 +12,7 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
         difference(){
             yCube(60,28,56, px=25, py=0);
             yCube(40,16,8, 40, 4, 7);
-            yCube(40,16,8, 40, 4, -9);
+            yCube(40,16,8, 40, 4, -8);
             //m8 shaft
             yCyl(4.6,66, px=14);
             //m8 shaft nut

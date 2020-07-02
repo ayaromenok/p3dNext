@@ -5,10 +5,12 @@ include <assemblyAxisZ.scad>
 include <new/axisYEndMotor.scad>
 include <new/axisYEndIdle.scad>
 include <new/axisYCarriage.scad>
+include <new/axisYCarriageDiamondHead.scad>
+include <new/axisYCarriage3Heads.scad>
 
-//assemblyFrame();
-//assemblyAxisZ();
-//assemblyAxisY();
+assemblyFrame();
+assemblyAxisZ();
+assemblyAxisY();
 
 module assemblyAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
     translate([(px), (py), pz])
@@ -23,7 +25,8 @@ module assemblyAxisY(px=0, py=0, pz=0, rx=0, ry=0, rz=0){
             yCube(400,6,2, px=0, py=0, pz=207);
             yCube(400,6,2, px=0, py=0, pz=193);
         }
-
+        //axisYCarriageDiamondHead();
+        //axisYCarriage3Heads();
     }//translate
 }//module assemblyAxisY 
 

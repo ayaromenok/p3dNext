@@ -29,8 +29,8 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             yCyl(12, 32, px=30,py=-2,pz=16, rx=90);
             
             //m8 smooth rod
-            yCyl2(4.2,50,px=20, py=8,pz=41, ry=90);
-            yCyl2(4.3,50,px=-20, py=8,pz=41, ry=90);    
+            yCyl2(4.2,60,px=20, py=8,pz=41, ry=90);
+            yCyl2(4.3,60,px=-20, py=8,pz=41, ry=90);    
         } 
         difference(){
             yCube(30,1.5,7, px=27, py=13.25);

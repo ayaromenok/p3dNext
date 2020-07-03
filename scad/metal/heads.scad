@@ -1,7 +1,7 @@
 include <../../lib/lib.scad>
 
-singleHeadV6();
-diamondHeadV6(100);
+//singleHeadV6();
+//diamondHeadV6(100);
 //Nozzle Kossel
 module singleHeadV6(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen"){
     translate([(px), (py), pz])

@@ -31,7 +31,7 @@ module bar_clamp_5off(px=0, py=0, pz=0, rx=0, ry=0, rz=0, zAdd=0){
             }//union
             yCyl(4.4,22+zAdd*2);
             yCube(22, 5, 22+zAdd*2, px=10);
-            yCyl2(2.8, 20, px=10, rx=90);
+            yCyl2(2.9, 20, px=10, rx=90);
             yCube(10,22,12, px=22, pz=7, ry=-30);
             yCube(10,22,12, px=22, pz=-7, ry=30);
         }//diff

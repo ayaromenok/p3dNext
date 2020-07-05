@@ -3,17 +3,20 @@ include <../metal/parts.scad>
 include <../metal/heads.scad>
 
 
-//axisYCarriage3Heads(showMetal=true);
-axisYCarriage3HeadsV2();
-//axisYCarriage3Heads(rx=-90);
-
+//axisYCarriage3HeadsV2(showMetal=true);
+//axisYCarriage3HeadsV2();
+axisYCarriage3HeadsV2(rx=-90);
+//axisYCarriage1HeadHolder(holes=true);
+axisYCarriage1HeadHolder(0,40,0.5,rx=-90,rz=180, short=true);
+axisYCarriage1HeadHolder(-40,40,0.5,rx=-90,rz=180, short=true);
+axisYCarriage1HeadHolder(40,40,0.5,rx=-90,rz=180, short=true);
 module axisYCarriage3HeadsV2(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])
     mirror([1,0,0])
     {
         difference(){
-            yCube(102,5,48, 0,0,-12);
+            yCube(102,5,56, 0,0,-8);
             //connector
             yCyl2(1.8,30,px=6, py=8,rx=90);
             yCyl2(1.8,30,px=-6, py=8,rx=90);
@@ -22,79 +25,69 @@ module axisYCarriage3HeadsV2(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false
             yCyl2(1.8,30,px=-6, py=-33,rx=90);
             yCyl2(1.8,30,px=-40, py=-33,rx=90);
             
-            //air for central head
-            yCube(86,5,16,0,-2,-15);
-            yCube(8,5,44,0,-2,-15);
-            //central head
-            translate([0,0,0]){
-                axisYCarriage1HeadHoles();
+            yCyl2(3,4,11,14,-1,90);
+            yCyl2(3,35,-11,14,-1,90);
                 
-            }
-            
-            //air for right head
-            yCube(8,7,40,30,0,-12);
-            yCube(26,7,16,30,0,-15);
-            //right head
-            axisYCarriage1HeadHoles(32);
-            
-            //air for left head
-            yCube(8,7,40,-30,0,-12);
-            yCube(26,7,16,-30,0,-15);
-            //left head
-            axisYCarriage1HeadHoles(-32);
-            
+            yCyl2(3,4,21,14,-1,90);
+            yCyl2(3,4,43,14,-1,90);
+                
+            yCyl2(3,4,-21,14,-1,90);
+            yCyl2(3,4,-43,14,-1,90);
         }//diff
-        axisYCarriage1HeadWasses();
-        axisYCarriage1HeadWasses(32);
-        axisYCarriage1HeadWasses(-32);
+        
+        
+        axisYCarriage1HeadHolder(0,-10.5,14, holes=true);
+        axisYCarriage1HeadHolder(32,-10.5,14);
+        axisYCarriage1HeadHolder(-32,-10.5,14);        
         
         
         if (showMetal){            
             color("darkgreen"){    
-                yCyl2(4,100, px=20, ry=90);
-                yCyl2(4,100, px=-20, ry=90);
+                singleHeadV6(0,-19,-8.5);
+                singleHeadV6(32,-19,-8.5);
+                singleHeadV6(-32,-19,-8.5);
+                yCyl2(1.5,35,11,14,15,90);
+                yCyl2(1.5,35,-11,14,15,90);
+                
+                yCyl2(1.5,35,21,14,15,90);
+                yCyl2(1.5,35,43,14,15,90);
+                
+                yCyl2(1.5,35,-21,14,15,90);
+                yCyl2(1.5,35,-43,14,15,90);
             }//clr  
         }//if        
         //for end-stoppers
-        yCube(3,20,48, 49.5,-10,-12);
-        yCube(3,20,48, -49.5,-10,-12);
+        yCube(3,20,30, 49.5,-10,-3);
+        yCube(3,20,30, -49.5,-10,-3);
     }//translate
 }//module assemblyAxisY 
 
-module axisYCarriage1HeadHoles(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
+module axisYCarriage1HeadHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, holes=false, short=false){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])    
     {
-        yCyl(2.1,30,px=12.1, pz=12.1, py=10,rx=90);
-        yCyl(4,30,px=12.1, pz=12.1, py=30,rx=90);
-        yCyl(2.1,30,px=12.1, pz=-12.1, py=10,rx=90);
-        yCyl(4,30,px=12.1, pz=-12.1, py=30,rx=90);
-        yCyl(2.1,30,px=-12.1, pz=12.1, py=10,rx=90);
-        yCyl(4,30,px=-12.1, pz=12.1, py=30,rx=90);
-        yCyl(2.1,30,px=-12.1, pz=-12.1, py=10,rx=90);
-        yCyl(4,30,px=-12.1, pz=-12.1, py=30,rx=90);
+        difference(){
+            yCube(30,16,12);
+            yCyl(6.2,5.4,0,-8,-0.5);
+            yCyl(8.2,4,0,-8,4);
+            yCyl(8.2,4,0,-8,-5);
+            //for m3
+            yCyl2(1.8,40,11,0,10,90);
+            yCyl2(1.8,40,-11,0,10,90);    
+            //for nuts
+            //yCube(10,4,7,11,0,0);
+            //yCube(10,4,7,-11,0,0);        
+            //yCube(4,4,20,11,0,0);
+            //yCube(4,4,20,-11,0,0);
+            if (holes){
+                yCyl2(3,30,px=6, py=-6,rx=90);
+                yCyl2(3,30,px=-6, py=-6,rx=90);
+            }//if holes
+            if(short){
+                yCube(25,8,14,11,7);
+                yCube(25,8,14,-11,7);
+            }//if short    
+        }//dif        
+        
     }//translate
 }//module axisYCarriage1HeadHoles
-
-module axisYCarriage1HeadWasses(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
-    translate([(px), (py), pz])
-    rotate([rx,ry,rz])    
-    {   
-        difference(){
-            yCyl(3.4,3,px=12.1, pz=-1.4, py=-2,rx=90);
-            yCyl(2.1,30,px=12.1, pz=12.1, py=10,rx=90);
-        }//diff
-        difference(){
-            yCyl(3.4,3,px=12.1, pz=-25.5, py=-2,rx=90);
-            yCyl(2.1,30,px=12.1, pz=-12.1, py=10,rx=90);
-        }//diff
-        difference(){
-            yCyl(3.4,3,px=-12.1, pz=-1.4, py=-2,rx=90);
-            yCyl(2.1,30,px=-12.1, pz=12.1, py=10,rx=90);
-        }//diff
-        difference(){
-            yCyl(3.4,3,px=-12.1, pz=-25.6, py=-2,rx=90);
-            yCyl(2.1,30,px=-12.1, pz=-12.1, py=10,rx=90);
-        }//diff
-    }//translate
-}//module assemblyAxisY 

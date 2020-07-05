@@ -21,7 +21,22 @@ define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 1
 
+//endstops
+#define USE_XMIN_PLUG
+#define USE_YMIN_PLUG
+#define USE_ZMIN_PLUG
+#define USE_XMAX_PLUG
+#define USE_YMAX_PLUG
+//#define USE_ZMAX_PLUG
 
+#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+
+//drivers
 #define X_DRIVER_TYPE  DRV8825
 #define Y_DRIVER_TYPE  DRV8825
 #define Z_DRIVER_TYPE  DRV8825

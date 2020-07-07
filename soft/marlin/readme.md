@@ -7,7 +7,28 @@
 #endif
 
 
-define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define PSU_CONTROL
+#define PSU_NAME "Power Supply"
+
+#if ENABLED(PSU_CONTROL)
+  #define PSU_ACTIVE_HIGH false     // Set 'false' for ATX, 'true' for X-Box
+
+  #define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
+  #define PSU_POWERUP_DELAY 100   // (ms) Delay for the PSU to warm up to full power
+
+  #define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
+  #if ENABLED(AUTO_POWER_CONTROL)
+    #define AUTO_POWER_FANS         // Turn on PSU if fans need power
+    #define AUTO_POWER_E_FANS
+    #define AUTO_POWER_CONTROLLERFAN
+    #define AUTO_POWER_CHAMBER_FAN
+    //#define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU over this temperature
+    //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU over this temperature
+    #define POWER_TIMEOUT 30
+  #endif
+#endif
+
+#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 
 
 #define EXTRUDERS 1

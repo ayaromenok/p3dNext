@@ -10,6 +10,9 @@ axisYCarriage3HeadsV2(rx=-90);
 axisYCarriage1HeadHolder(0,40,0.5,rx=-90,rz=180, short=true);
 axisYCarriage1HeadHolder(-40,40,0.5,rx=-90,rz=180, short=true);
 axisYCarriage1HeadHolder(40,40,0.5,rx=-90,rz=180, short=true);
+
+axisYCarriageLevelProbeHolder(80,40,0.5,rx=-90,rz=180, short=true);
+
 module axisYCarriage3HeadsV2(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])
     rotate([rx,ry,rz])
@@ -87,6 +90,33 @@ module axisYCarriage1HeadHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, holes=false,
                 yCube(25,8,14,11,7);
                 yCube(25,8,14,-11,7);
             }//if short    
+            
+        }//dif                
+    }//translate
+}//module axisYCarriage1HeadHoles
+
+
+module axisYCarriageLevelProbeHolder(px=0, py=0, pz=0, rx=0, ry=0, rz=0, holes=false, short=false){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])    
+    {
+        difference(){
+            yCube(30,16,12);            
+            //for m3
+            yCyl2(1.8,40,11,0,10,90);
+            yCyl2(1.8,40,-11,0,10,90);    
+            //for probe
+            yCyl2(1.8,40,9,-3,6,0);
+            yCyl2(1.8,40,-9,-3,10,0);
+            if (holes){
+                yCyl2(3,30,px=6, py=-6,rx=90);
+                yCyl2(3,30,px=-6, py=-6,rx=90);
+            }//if holes
+            if(short){
+                yCube(25,8,14,11,7);
+                yCube(25,8,14,-11,7);
+            }//if short    
+            
         }//dif        
         
     }//translate

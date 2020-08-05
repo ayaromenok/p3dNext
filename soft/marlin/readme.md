@@ -78,3 +78,10 @@
 
 //display
 looks like  it's a ZONESTAR_LCD, but not 100%
+
+
+#autoleveling
+
+BLTouch - and clones (BLTOUCH)
+https://www.geeetech.com/wiki/index.php/3DTouch_Auto_Leveling_Sensor
+https://marlinfw.org/docs/configuration/probes.html

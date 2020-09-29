@@ -1,9 +1,12 @@
 include <../metal/M8.scad>
 include <../metal/parts.scad>
+include <../metal/heads.scad>
 
 
 //axisYCarriage(showMetal=true);
-//axisYCarriage();
+//axisYCarriageDiamond(showMetal=true);
+axisYCarriageDiamond(showMetal=false,rx=180);
+//axisYCarriage(py=30);
 //axisYCarriage(ry=-90);
 
 module axisYCarriage(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
@@ -44,5 +47,57 @@ module axisYCarriage(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
                 yCyl2(4,100, px=-20, ry=90);
             }//clr  
         }//if        
+    }//translate
+}//module assemblyAxisY 
+
+module axisYCarriageDiamond(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])
+    mirror([1,0,0])
+    {   
+        difference(){
+            union(){
+                yCube(90,20,50,     0,0,15);
+                yCube(90,51,3,     0,-35,38.5);
+                yCube(5,51,23,     42.5,-35,28.5);
+                yCube(5,51,23,     -42.5,-35,28.5);
+            }
+            yCube(30,21,41,     0,0,10);
+            //holes for 40mm fan
+            yCyl(18,20,     0,-36,35);
+            yCyl(1,20,     16,-20,35);
+            yCyl(1,20,     16,-52,35);
+            yCyl(1,20,     -16,-20,35);
+            yCyl(1,20,     -16,-52,35);
+            //for filament pipes
+            translate([0,-36,25]){        
+                rotate([0,0,150])
+                    yCyl(10.5,50,px=19,pz=5, ry=30);
+                rotate([0,0,30])
+                    yCyl(10.5,50,px=19,pz=5, ry=30);
+            }    
+        }
+        
+        
+        LM8UUHolder(px=0,py=0, pz=20, ry=90);
+        LM8UUHolder(px=-32,py=0, pz=-20, ry=90);
+        LM8UUHolder(px=32,py=0, pz=-20, ry=90);
+        if (showMetal){            
+            color("darkgreen"){    
+                yCyl2(4,100, px=20, ry=90);
+                yCyl2(4,100, px=-20, ry=90);
+            }//clr  
+        }//if
+        if (showMetal){
+            translate([0,-36,25]){        
+                diamondHeadV6(pz=-37,rz=30);
+                translate([0,0,12])
+                rotate([180,0,-90])
+                color("lightblue")
+                    import("../../stl/3rd/diamond.stl");            
+                
+            }//translate            
+            
+        }//if showMetall
     }//translate
 }//module assemblyAxisY 

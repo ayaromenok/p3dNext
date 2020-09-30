@@ -3,6 +3,24 @@ include <../../lib/lib.scad>
 //LM8UU();
 //LM8UUHolder();
 //NEMA17();
+//GT2_16();
+//endStop();
+
+module endStop(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen", length=37){
+    translate([(px), (py), pz])
+    rotate([rx,ry,rz])
+    color(clr) {
+        difference(){
+            yCube(39.5,16,2);
+            //holes
+            yCyl(1.5,3,         (39.5/2)-3.5,5);
+            yCyl(1.5,3,         (39.5/2-19)-3.5,5);
+        }//diff
+        yCube(10,12,5,          -14,0,3);
+        yCube(13,8,5,          7,4,3);
+        yCyl2(1.5,4,       14,3,-8.5,  90,0,0);
+    }//transform
+}//module
 
 module LM8UU(px=0, py=0, pz=0, rx=0, ry=0, rz=0, clr="darkgreen"){
     translate([(px), (py), pz])

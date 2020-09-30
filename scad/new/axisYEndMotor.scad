@@ -4,13 +4,18 @@ include <../metal/parts.scad>
 // !todo add nut connection!
 //axisYEndMotor(showMetal=true);
 //axisYEndMotor();
-//axisYEndMotor(ry=90);
+axisYEndMotor(ry=90);
 
 module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])
     rotate([rx,ry,rz]){        
         difference(){
-            yCube(60,28,56, px=25, py=0);
+            union(){
+                yCube(60,28,56, px=25, py=0);
+                //endstop holder            
+                yCube(6,14,6,   52,-12,6);    
+                yCube(6,14,6,   52,-12,-13);    
+            }//union
             yCube(40,16,8, 40, 4, 7);
             yCube(40,16,8, 40, 4, -8);
             //m8 shaft
@@ -29,6 +34,18 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             yCyl2(4.2,60,px=20, py=8,pz=41, ry=90);
             yCyl2(4.3,60,px=-20, py=8,pz=41, ry=90);    
         }   
+        //stoper for endstop/top
+        yPoly([[0,0],[10,0],[60,40],[0,40]], 5,    -5,-54,23);        
+        translate([00,-14,23])
+        rotate([90,0,0])
+            cylinder(40,5,00,$fn=4);
+        
+        //stoper for endstop/bottom
+        yPoly([[0,0],[10,0],[60,40],[0,40]], 5,    -5,-54,-28);        
+        translate([00,-14,-23])
+        rotate([90,0,0])
+            cylinder(40,5,00,$fn=4);
+
         
         LM8UUHolder(px=-16,py=0, pz=-16.5, rz=180);
         LM8UUHolder(px=-16,py=0, pz=16.5, rz=180);
@@ -40,6 +57,12 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             //yCyl(4.6,100, px=-16);
             NEMA17(px=30, py=33, rx=90, ry=45);
             GT2_16(px=30,py=-2,rx=-90);
+            //endstop
+            color("yellow")
+            endStop(47,-20,3,  90,90,0);    
+                    //endstop holder holes
+            yCyl2(0.8,20,    13,52,12,  90,90,0);
+            yCyl2(0.8,20,    -6,52,12,  90,90,0);
             
         }//if        
     }//translate

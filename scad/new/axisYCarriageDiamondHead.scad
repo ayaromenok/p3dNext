@@ -3,7 +3,7 @@ include <../metal/parts.scad>
 include <../metal/heads.scad>
 
 
-axisYCarriageDiamondHead(showMetal=true);
+//axisYCarriageDiamondHead(showMetal=true);
 //axisYCarriageDiamondHead();
 //axisYCarriageDiamondHead(ry=-90);
 

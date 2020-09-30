@@ -4,7 +4,7 @@ include <../metal/heads.scad>
 
 
 //axisYCarriage(showMetal=true);
-axisYCarriageDiamond(showMetal=true);
+//axisYCarriageDiamond(showMetal=true);
 //axisYCarriageDiamond(showMetal=false,rx=180);
 //axisYCarriage(py=30);
 //axisYCarriage(ry=-90);

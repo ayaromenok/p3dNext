@@ -4,7 +4,7 @@ include <../metal/parts.scad>
 // !todo add nut connection!
 //axisYEndIdle(showMetal=true);
 //axisYEndIdle();
-axisYEndIdle(ry=-90);
+//axisYEndIdle(ry=-90);
 
 module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])
@@ -15,8 +15,8 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             union(){
                 yCube(60,28,56, px=25, py=0);
                 //endstop holder
-                yCyl2(3,10,    -2,-8,10,    -90,0,0);
-                yCyl2(3,10,    -2,11,10,    -90,0,0);
+                yCyl2(3,10,    52,-24,-10,    -90,0,0);
+                yCyl2(3,10,    52,-5,-10,    -90,0,0);
             }
             yCube(40,11,22, 40, 7, 0);            
             
@@ -40,15 +40,15 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             yCyl2(4.3,60,px=-20, py=8,pz=41, ry=90);    
             
         //endstop holder holes
-            yCyl2(0.8,20,    -2,-8,10,    -90,0,0);
-            yCyl2(0.8,20,    -2,11,10,    -90,0,0);            
+            yCyl2(0.8,20,    52,-24,-10,    -90,0,0);
+            yCyl2(0.8,20,    52,-5,-10,    -90,0,0);            
         } 
+        //hold rail 
         difference(){
             //yCube(30,1.5,7, px=27, py=13.25);
             yPoly([[5,0],[3,3],[-3,3],[-5,0]], 30,    15,12.5,0,  0,90,0);
             yCyl(2.3, 32, px=30,py=20,pz=16, rx=90);
-        }//dif
-        
+        }//dif        
         
         LM8UUHolder(px=-16,py=0, pz=-16.5, rz=180);
         LM8UUHolder(px=-16,py=0, pz=16.5, rz=180);
@@ -65,7 +65,7 @@ module axisYEndIdle(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             }//clr  
             color("yellow"){    
                 mirror([1,0,0])
-                endStop(-3,15,-8,  -90,-90,0);                
+                endStop(-47,-15,8,  90,-90,0);                
             }
         }//if        
     }//translate

@@ -5,13 +5,13 @@ include <../metal/heads.scad>
 
 //axisYCarriage3HeadsV2(showMetal=true);
 //axisYCarriage3HeadsV2();
-axisYCarriage3HeadsV2(rx=-90);
+//axisYCarriage3HeadsV2(rx=-90);
 //axisYCarriage1HeadHolder(holes=true);
-axisYCarriage1HeadHolder(0,40,0.5,rx=-90,rz=180, short=true);
-axisYCarriage1HeadHolder(-40,40,0.5,rx=-90,rz=180, short=true);
-axisYCarriage1HeadHolder(40,40,0.5,rx=-90,rz=180, short=true);
+//axisYCarriage1HeadHolder(0,40,0.5,rx=-90,rz=180, short=true);
+//axisYCarriage1HeadHolder(-40,40,0.5,rx=-90,rz=180, short=true);
+//axisYCarriage1HeadHolder(40,40,0.5,rx=-90,rz=180, short=true);
 
-axisYCarriageLevelProbeHolder(80,40,0.5,rx=-90,rz=180, short=true);
+//axisYCarriageLevelProbeHolder(80,40,0.5,rx=-90,rz=180, short=true);
 
 module axisYCarriage3HeadsV2(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
     translate([(px), (py), pz])

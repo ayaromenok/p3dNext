@@ -13,8 +13,8 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             union(){
                 yCube(60,28,56, px=25, py=0);
                 //endstop holder            
-                yCube(6,14,5,   52,-13,25);    
-                yCube(6,14,5,   52,-13,6);    
+                yCube(6,14,5,   52,-15,25);    
+                yCube(6,14,5,   52,-15,6);    
             }//union
             yCube(40,16,8, 40, 4, 7);
             yCube(40,16,8, 40, 4, -8);
@@ -34,8 +34,8 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             yCyl2(4.2,60,px=20, py=8,pz=41, ry=90);
             yCyl2(4.3,60,px=-20, py=8,pz=41, ry=90);    
                     //endstop holder holes
-            yCyl2(0.8,20,    -6,52,12,  90,90,0);
-            yCyl2(0.8,20,    -25,52,12,  90,90,0);
+            yCyl2(0.8,20,    -6,52,13,  90,90,0);
+            yCyl2(0.8,20,    -25,52,13,  90,90,0);
         }   
         //stoper for endstop/top
         yPoly([[0,0],[10,0],[46,40],[0,40]], 5,    -5,-54,23);        
@@ -62,7 +62,7 @@ module axisYEndMotor(px=0, py=0, pz=0, rx=0, ry=0, rz=0, showMetal=false){
             GT2_16(px=30,py=-2,rx=-90);
             //endstop
             color("yellow")
-            endStop(47,-21,9,  90,-90,180);    
+            endStop(47,-22,9,  90,-90,180);    
         }//if        
     }//translate
 }//module assemblyAxisY 

@@ -6,3 +6,4 @@
 - use Mendel as a basis (https://reprap.org/wiki/Prusa_Mendel and https://github.com/prusajr/PrusaMendel)
 - re-create some plastic parts(some of them is broken due to changes in SCAD)
 
+ToDo: evaluate https://reprap.org/wiki/CoreXY
